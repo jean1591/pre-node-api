@@ -3,10 +3,11 @@
 	"version": "1.0.0",
 	"main": "app.js",
 	"scripts": {
-		"start": "nodemon app"
+		"start": "node server",
+		"dev": "nodemon app"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Mark Watney",
 	"license": "ISC",
 	"dependencies": {
 		"body-parser": "^1.19.0",
