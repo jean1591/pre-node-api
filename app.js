@@ -5,7 +5,7 @@ const morgan = require("morgan");
 const colors = require("colors");
 
 // FILES
-// const connectDB = require("./config/db.js");
+const connectDB = require("./config/db.js");
 
 // Init app
 const app = express();
@@ -14,17 +14,17 @@ const app = express();
 dotenv.config({ path: "./config/config.env" });
 
 // Connect DB
-// connectDB();
+connectDB();
 
 // MIDDLEWARE
 // Dev logging
-// app.use(morgan("dev"));
+app.use(morgan("dev"));
 
 // Routes
-// const properties = require("./routes/properties");
+const properties = require("./routes/properties");
 
 // Mount Routers
-// app.use("/api/v1/properties", properties);
+app.use("/api/v1/properties", properties);
 
 app.get("/", (req, res) => res.send("Hello"));
 
