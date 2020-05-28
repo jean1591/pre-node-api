@@ -18,7 +18,7 @@ connectDB();
 
 // MIDDLEWARE
 // Dev logging
-// app.use(morgan("dev"));
+app.use(morgan("dev"));
 
 // Routes
 const properties = require("./routes/properties");
