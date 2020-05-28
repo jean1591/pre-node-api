@@ -1,8 +1,7 @@
 {
-	"name": "realEstate_API",
+	"name": "PRS-node-API",
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"main": "app.js",
 	"scripts": {
 		"start": "nodemon app"
 	},
@@ -17,6 +16,15 @@
 		"mongoose": "^5.9.16",
 		"morgan": "^1.10.0"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jean1591/PRS-node-API.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jean1591/PRS-node-API/issues"
+	},
+	"homepage": "https://github.com/jean1591/PRS-node-API#readme",
+	"description": "",
 	"devDependencies": {
 		"nodemon": "^2.0.4"
 	}
