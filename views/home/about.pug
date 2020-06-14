@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  .container
+    h1 About This App
+
+    p.mb-3 Prestige Real Estate is a node app for a mock-up real estate website
+    
+    .mb-3
+      h5 Disclaimer
+      p All details such as but not limited to names, contact details, pictures, prices, surfaces and number of rooms are not legitimate values and does not represent the true value of displayed properties.
+    
+    ul.list-group.mb-3
+      li.list-group-item.active Tech Stack
+      li.list-group-item #{`Back-end => node.js`}
+      li.list-group-item #{`Front-end => pug + Bootstrap`}
+      li.list-group-item #{`Database => MongoDB`}
+    
+    ul.list-group.mb-3
+      li.list-group-item.active Credits
+      li.list-group-item.d-flex.justify-content-between.align-items-center Agent Data
+        a.badge.badge-success.p-2(href="https://randomuser.me/") randomuser.me
+      li.list-group-item.d-flex.justify-content-between.align-items-center Pictures
+        a.badge.badge-success.p-2(href="https://www.pexels.com") pexels.com
+      li.list-group-item.d-flex.justify-content-between.align-items-center Property Data
+        a.badge.badge-success.p-2(href="https://www.generatedata.com") generatedata.com
+
+
