@@ -14,3 +14,8 @@ body {
 	font-family: "Montserrat", sans-serif;
 	box-sizing: border-box;
 }
+
+.dark-bg {
+	background-color: var(--dark-shades);
+	color: var(--light-shades);
+}

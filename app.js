@@ -34,9 +34,9 @@ const properties = require("./routes/properties");
 const admin = require("./routes/admin");
 
 // Mount Routers
+app.use("/", home);
 app.use("/properties", properties);
 app.use("/admin", admin);
-app.use("/", home);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`.yellow.bold));
