@@ -31,3 +31,17 @@ exports.getProperty = async (req, res, next) => {
 		data: []
 	});
 };
+
+//  @desc     Add property
+//  @route    GET /admin/properties/add
+//  @access   Private
+exports.addProperty = async (req, res, next) => {
+	res.render("admin/propertyAdd");
+};
+
+//  @desc     Edit property
+//  @route    GET /admin/properties/edit/:id
+//  @access   Private
+exports.editProperty = async (req, res, next) => {
+	res.render("admin/propertyEdit");
+};
