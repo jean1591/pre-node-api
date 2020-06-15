@@ -1,4 +1,17 @@
 extends ../layout
 
 block content
-  h1 LOGIN PAGE
+  .container
+    h1.text-center Login
+
+    .form-container
+      form
+        .mb-3
+          label(for="username") Username
+          input(type="text" placeholder="Username...").form-control#username
+        .mb-3
+          label(for="password") Password
+          input(type="text" placeholder="Password...").form-control#password
+        .mb-3
+          button.btn-outline-secondary.full-width Submit
+

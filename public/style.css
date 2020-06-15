@@ -26,6 +26,12 @@ body {
 	color: var(--dark-shades);
 }
 
+.fade-bg {
+	border-radius: 15px;
+	padding: 5px 15px;
+	opacity: 0.5;
+}
+
 /* TEXTS */
 .dark-text {
 	color: var(--dark-shades);
@@ -35,10 +41,15 @@ body {
 	color: var(--light-shades);
 }
 
-.fade-bg {
-	border-radius: 15px;
+/* BUTTONS */
+.btn-outline-secondary {
+	border-radius: 5px;
 	padding: 5px 15px;
-	opacity: 0.5;
+	border: 1px solid var(--dark-accent);
+}
+
+.full-width {
+	width: 100%;
 }
 
 /* HOME */
@@ -80,6 +91,18 @@ body {
 	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
+/* LOGIN */
+div.form-container {
+	display: block;
+	width: 400px;
+}
+
+.form-container {
+	display: inline-block;
+	margin: auto;
+	padding: 10px;
+}
+
 /* Responsive */
 @media (max-width: 1100px) {
 	.container-property {
@@ -91,10 +114,18 @@ body {
 	.container-property {
 		grid-template-columns: repeat(2, 1fr);
 	}
+
+	div.form-container {
+		width: 90%;
+	}
 }
 
 @media (max-width: 500px) {
 	.container-property {
 		grid-template-columns: 1fr;
+	}
+
+	div.form-container {
+		width: 90%;
 	}
 }

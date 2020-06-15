@@ -12,6 +12,7 @@ exports.getProperties = async (req, res, next) => {
 	try {
 		properties = await Property.find();
 	} catch (error) {}
+
 	res.render("properties/properties", {
 		count: properties.length,
 		data: properties
@@ -27,9 +28,8 @@ exports.getProperty = async (req, res, next) => {
 	try {
 		property = await Property.findById(req.params.id);
 		agent = await axios.get("https://randomuser.me/api/?inc=name,picture,email,cell&nat=FR");
-	} catch (error) {
-		console.log(error);
-	}
+	} catch (error) {}
+
 	res.render("properties/property", {
 		data: property,
 		agent: agent.data.results[0]
