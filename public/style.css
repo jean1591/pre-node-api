@@ -15,6 +15,7 @@ body {
 	box-sizing: border-box;
 }
 
+/* BACKGROUNDS */
 .dark-bg {
 	background-color: var(--dark-shades);
 	color: var(--light-shades);
@@ -23,6 +24,15 @@ body {
 .light-bg {
 	background-color: var(--light-shades);
 	color: var(--dark-shades);
+}
+
+/* TEXTS */
+.dark-text {
+	color: var(--dark-shades);
+}
+
+.light-text {
+	color: var(--light-shades);
 }
 
 .fade-bg {
@@ -53,14 +63,18 @@ body {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 20px;
+}
+
+.card {
 	margin-top: 30px;
+	border-radius: 10px;
 }
 
 .card img {
 	height: 200px;
 	width: 95%;
 	margin: auto;
-	margin-top: -5%;
+	margin-top: -20px;
 	object-fit: cover;
 	border-radius: 10px;
 	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);

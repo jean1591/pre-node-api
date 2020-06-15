@@ -3,4 +3,17 @@ extends ../layout
 block content
   .dark-bg
     .container
-      h1 PROPERTIES LIST
+      h1.text-center Our Properties
+
+      .container-property
+        each property, i in data
+          .card
+            img(src=property.imgPortrait, alt="Property").card-img-top
+            .card-body
+              h5.card-title.text-center.dark-text #{property.city}
+              p.card-text.dark-text #{property.title}
+              .d-flex.justify-content-between
+                p.card-text.dark-text €#{property.price}
+                p.card-text.dark-text #{property.surface}m2
+            .card-footer
+              a.btn.btn-sm.dark-text(href=`/properties/${property._id}`) #{`Discover >>`}

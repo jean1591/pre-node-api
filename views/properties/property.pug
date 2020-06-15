@@ -1,4 +1,40 @@
 extends ../layout
 
 block content
-  h1 PROPERTY DETAILS
+  .dark-bg
+    .container
+      .row.mb-4
+        // Property
+        .col-md-8.mb-3
+          h4.text-center The Property
+          .card.bg-light
+            img.card-img-top(src=data.imgPortrait, alt="Property portrait")
+            .card-body
+              // Title & Desc
+              h5.card-title.dark-text #{data.title}
+              p.card-text.dark-text #{data.desc}
+
+              // Property features
+              ul.list-group
+                li.dark-text.list-group-item.d-flex.justify-content-between
+                  i.las.la-euro-sign
+                  p.mb-0 #{data.price}
+                li.dark-text.list-group-item.d-flex.justify-content-between
+                  i.las.la-crop-alt
+                  p.mb-0 #{data.surface}
+                li.dark-text.list-group-item.d-flex.justify-content-between
+                  i.las.la-bed
+                  p.mb-0 #{data.nbRoom}
+                li.dark-text.list-group-item.d-flex.justify-content-between
+                  i.las.la-shower
+                  p.mb-0 #{data.nbRoom % 2 === 0 ? data.nbRoom + 1 : data.nbRoom - 1}
+        
+        // Real Estate Agent
+        .col-md-4.mb-3
+          h4.text-center Your Agent
+          .card.bg-light
+            img.card-img-top(src=agent.picture.medium, alt="Agent thumbnail")
+            .card-body
+              h5.dark-text.card-title #{agent.name.first} #{agent.name.last}
+              p.dark-text.card-text #{agent.email}
+              p.dark-text.card-text #{agent.cell}

@@ -1,3 +1,6 @@
+// REQUIRES
+const axios = require("axios");
+
 // MODELS
 const Property = require("../models/Property");
 
@@ -5,9 +8,13 @@ const Property = require("../models/Property");
 //  @route    GET /properties
 //  @access   Public
 exports.getProperties = async (req, res, next) => {
-	// const properties = await Property.find();
+	let properties = [];
+	try {
+		properties = await Property.find();
+	} catch (error) {}
 	res.render("properties/properties", {
-		data: []
+		count: properties.length,
+		data: properties
 	});
 };
 
@@ -15,8 +22,16 @@ exports.getProperties = async (req, res, next) => {
 //  @route    GET /properties/:id
 //  @access   Public
 exports.getProperty = async (req, res, next) => {
-	// const property = await Property.findById(req.params.id);
+	let property = {};
+	let agent = {};
+	try {
+		property = await Property.findById(req.params.id);
+		agent = await axios.get("https://randomuser.me/api/?inc=name,picture,email,cell&nat=FR");
+	} catch (error) {
+		console.log(error);
+	}
 	res.render("properties/property", {
-		data: []
+		data: property,
+		agent: agent.data.results[0]
 	});
 };
