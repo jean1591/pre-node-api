@@ -1,10 +1,3 @@
-//  @desc     Get login page
-//  @route    GET /admin/login
-//  @access   Public
-exports.login = async (req, res, next) => {
-	res.render("admin/login");
-};
-
 //  @desc     Get dashboard
 //  @route    GET /admin/dahsboard
 //  @access   Private

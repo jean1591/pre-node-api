@@ -5,13 +5,13 @@ block content
     h1.text-center Login
 
     .form-container
-      form
+      form(method="POST", action="/auth/login")
         .mb-3
-          label(for="username") Username
-          input(type="text" placeholder="Username...").form-control#username
+          label(for="email") Email
+          input(type="text" placeholder="email...").form-control#email
         .mb-3
           label(for="password") Password
           input(type="text" placeholder="Password...").form-control#password
         .mb-3
-          button.btn-outline-secondary.full-width Submit
+          button.btn-outline-secondary.full-width(type="submit") Login
 
