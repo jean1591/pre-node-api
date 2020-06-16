@@ -13,10 +13,10 @@ block content
               // Title & Desc
               .mb-3
                 label(for="title") Title
-                input(type="text" name="title" value=data.title).form-control
+                input(type="text" name="title" value=data.title).form-control#f-title
               .mb-3
                 label(for="desc") Description
-                textarea(name="desc").form-control= data.desc
+                textarea(name="desc").form-control#f-desc= data.desc
               
               // Price & Surface
               .row.mb-3
@@ -25,25 +25,25 @@ block content
                   .input-group
                     .input-group-prepend
                       span.input-group-text €
-                    input(type="number" name="price" value=data.price).form-control
+                    input(type="number" name="price" value=data.price).form-control#f-price
                 .col-md-6
                   label(for="surface") Surface
                   .input-group
                     .input-group-prepend
                       span.input-group-text m2
-                    input(type="number" name="surface" value=data.surface).form-control
+                    input(type="number" name="surface" value=data.surface).form-control#f-surface
               
               // Address
               .mb-3
                 label(for="streetAddress") Address
-                input(type="text" name="streetAddress" value=data.streetAddress).form-control
+                input(type="text" name="streetAddress" value=data.streetAddress).form-control#f-streetAddress
               .row.mb-3
                 .col-md-6
                   label(for="postal") Zipcode
-                  input(type="text" name="postal" value=data.postal).form-control
+                  input(type="text" name="postal" value=data.postal).form-control#f-postal
                 .col-md-6
                   label(for="city") City
-                  input(type="text" name="city" value=data.city).form-control
+                  input(type="text" name="city" value=data.city).form-control#f-city
               
               // Submit
               .mb-3
@@ -56,17 +56,17 @@ block content
             img.card-img-top(src=data.imgPortrait, alt="Property portrait")
             .card-body
               // Title & Desc
-              h5.card-title.dark-text #{data.title}
-              p.card-text.dark-text #{data.desc}
+              h5.card-title.dark-text#p-title #{data.title}
+              p.card-text.dark-text#p-desc #{data.desc}
 
               // Property features
               ul.list-group
                 li.dark-text.list-group-item.d-flex.justify-content-between
                   i.las.la-euro-sign
-                  p.mb-0 #{data.price}
+                  p.mb-0#p-price #{data.price}
                 li.dark-text.list-group-item.d-flex.justify-content-between
                   i.las.la-crop-alt
-                  p.mb-0 #{data.surface}
+                  p.mb-0#p-surface #{data.surface}
                 li.dark-text.list-group-item.d-flex.justify-content-between
                   i.las.la-bed
                   p.mb-0 #{data.nbRoom}
