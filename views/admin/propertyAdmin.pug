@@ -1,4 +1,75 @@
 extends ../layout
 
 block content
-  h1 PROPERTY DETAILS ADMIN
+  .dark-bg
+    .container
+      .row
+        // Details
+        .col-md-6.mb-3
+          h4.text-center Details
+          .form-container
+            // form(method="POST", action="/auth/register")
+            form
+              // Title & Desc
+              .mb-3
+                label(for="title") Title
+                input(type="text" name="title" value=data.title).form-control
+              .mb-3
+                label(for="desc") Description
+                textarea(name="desc").form-control= data.desc
+              
+              // Price & Surface
+              .row.mb-3
+                .col-md-6
+                  label(for="price") Price
+                  .input-group
+                    .input-group-prepend
+                      span.input-group-text €
+                    input(type="number" name="price" value=data.price).form-control
+                .col-md-6
+                  label(for="surface") Surface
+                  .input-group
+                    .input-group-prepend
+                      span.input-group-text m2
+                    input(type="number" name="surface" value=data.surface).form-control
+              
+              // Address
+              .mb-3
+                label(for="streetAddress") Address
+                input(type="text" name="streetAddress" value=data.streetAddress).form-control
+              .row.mb-3
+                .col-md-6
+                  label(for="postal") Zipcode
+                  input(type="text" name="postal" value=data.postal).form-control
+                .col-md-6
+                  label(for="city") City
+                  input(type="text" name="city" value=data.city).form-control
+              
+              // Submit
+              .mb-3
+                button.btn-outline-secondary.full-width(type="submit") Update
+
+        // Property
+        .col-md-6.mb-3
+          h4.text-center The Property
+          .card.bg-light
+            img.card-img-top(src=data.imgPortrait, alt="Property portrait")
+            .card-body
+              // Title & Desc
+              h5.card-title.dark-text #{data.title}
+              p.card-text.dark-text #{data.desc}
+
+              // Property features
+              ul.list-group
+                li.dark-text.list-group-item.d-flex.justify-content-between
+                  i.las.la-euro-sign
+                  p.mb-0 #{data.price}
+                li.dark-text.list-group-item.d-flex.justify-content-between
+                  i.las.la-crop-alt
+                  p.mb-0 #{data.surface}
+                li.dark-text.list-group-item.d-flex.justify-content-between
+                  i.las.la-bed
+                  p.mb-0 #{data.nbRoom}
+                li.dark-text.list-group-item.d-flex.justify-content-between
+                  i.las.la-shower
+                  p.mb-0 #{data.nbRoom % 2 === 0 ? data.nbRoom + 1 : data.nbRoom - 1}

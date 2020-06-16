@@ -29,8 +29,13 @@ exports.getProperties = async (req, res, next) => {
 //  @route    GET /admin/properties/:id
 //  @access   Private
 exports.getProperty = async (req, res, next) => {
+	let property = {};
+	try {
+		property = await Property.findById(req.params.id);
+	} catch (error) {}
+
 	res.render("admin/propertyAdmin", {
-		data: []
+		data: property
 	});
 };
 
