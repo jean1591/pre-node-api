@@ -42,10 +42,24 @@ body {
 }
 
 /* BUTTONS */
-.btn-outline-secondary {
+.btn-outline {
 	border-radius: 5px;
 	padding: 5px 15px;
 	border: 1px solid var(--dark-accent);
+}
+
+.btn-outline-secondary {
+	border-radius: 5px;
+	padding: 5px 15px;
+	background-color: #63a762;
+	color: #fff;
+}
+
+.btn-outline-danger {
+	background-color: #f44336;
+	border-radius: 5px;
+	padding: 5px 15px;
+	color: #fff;
 }
 
 .full-width {
