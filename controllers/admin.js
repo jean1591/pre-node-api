@@ -1,3 +1,6 @@
+// MODELS
+const Property = require("../models/Property");
+
 //  @desc     Get dashboard
 //  @route    GET /admin/dahsboard
 //  @access   Private
@@ -11,8 +14,14 @@ exports.dashboard = async (req, res, next) => {
 //  @route    GET /admin/properties
 //  @access   Private
 exports.getProperties = async (req, res, next) => {
+	let properties = [];
+	try {
+		properties = await Property.find();
+	} catch (error) {}
+
 	res.render("admin/propertiesAdmin", {
-		data: []
+		count: properties.length,
+		data: properties
 	});
 };
 
